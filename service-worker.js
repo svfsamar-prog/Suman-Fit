@@ -1,4 +1,4 @@
-const CACHE_NAME = 'suman-fit-tracker-v4';
+const CACHE_NAME = 'suman-fit-tracker-v5';
 const ASSETS = [
     './',
     './index.html',
