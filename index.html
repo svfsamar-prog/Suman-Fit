@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Suman's Fit Tracker</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+    <link rel="apple-touch-icon" href="./icons/icon-192.png">
+    <meta name="theme-color" content="#FF6B9D">
+</head>
+<body>
+    <header>
+        <h1>SUMAN GHOSHAL</h1>
+        <div id="weekly-tracker" class="weekly-tracker">
+            <!-- Weekly dots will be injected here via JS -->
+        </div>
+    </header>
+
+    <nav id="day-nav" class="day-nav">
+        <!-- Day tabs will be injected here via JS -->
+    </nav>
+
+    <main>
+        <div id="progress-indicator" class="progress-indicator">
+            <!-- E.g., "12/15 sets done" -->
+        </div>
+
+        <div id="workout-container" class="workout-container">
+            <!-- Workout cards injected here -->
+        </div>
+    </main>
+
+    <!-- Celebration container -->
+    <div id="celebration-container" class="celebration-container hidden">
+        <div class="celebration-content">
+            <span class="star">✨</span>
+            <h2>Workout Complete!</h2>
+            <p>Great job today, Suman!</p>
+            <span class="star">✨</span>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
