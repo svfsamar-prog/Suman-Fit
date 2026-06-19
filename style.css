@@ -107,6 +107,18 @@ header h1 {
     margin: 8px 16px 16px;
 }
 
+/* Muscle Group Headers */
+.muscle-group-header {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--accent-pink);
+    margin-top: 12px;
+    margin-bottom: 0px;
+    padding-left: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 /* Workout Container & Cards */
 .workout-container {
     padding: 0 16px;

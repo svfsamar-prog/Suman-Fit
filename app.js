@@ -5,11 +5,11 @@ const WORKOUT_PLAN = {
         fullName: 'Monday',
         focus: 'Chest + Triceps',
         exercises: [
-            { name: 'Flat barbell/machine bench press', sets: 3, reps: '10-12 reps' },
-            { name: 'Incline dumbbell press', sets: 3, reps: '10-12 reps' },
-            { name: 'Chest fly (machine or cable)', sets: 3, reps: '12-15 reps' },
-            { name: 'Triceps pushdown (cable)', sets: 3, reps: '12-15 reps' },
-            { name: 'Overhead triceps extension (dumbbell)', sets: 3, reps: '12-15 reps' }
+            { name: 'Flat barbell/machine bench press', muscle: 'Chest', sets: 3, reps: '10-12 reps' },
+            { name: 'Incline dumbbell press', muscle: 'Chest', sets: 3, reps: '10-12 reps' },
+            { name: 'Chest fly (machine or cable)', muscle: 'Chest', sets: 3, reps: '12-15 reps' },
+            { name: 'Triceps pushdown (cable)', muscle: 'Triceps', sets: 3, reps: '12-15 reps' },
+            { name: 'Overhead triceps extension (dumbbell)', muscle: 'Triceps', sets: 3, reps: '12-15 reps' }
         ]
     },
     tuesday: {
@@ -18,11 +18,11 @@ const WORKOUT_PLAN = {
         fullName: 'Tuesday',
         focus: 'Back + Biceps',
         exercises: [
-            { name: 'Lat pulldown', sets: 3, reps: '10-12 reps' },
-            { name: 'Seated cable row', sets: 3, reps: '10-12 reps' },
-            { name: 'Assisted pull-up or back extension machine', sets: 3, reps: '8-10 reps' },
-            { name: 'Barbell or dumbbell bicep curl', sets: 3, reps: '12-15 reps' },
-            { name: 'Hammer curl', sets: 3, reps: '12-15 reps' }
+            { name: 'Lat pulldown', muscle: 'Back', sets: 3, reps: '10-12 reps' },
+            { name: 'Seated cable row', muscle: 'Back', sets: 3, reps: '10-12 reps' },
+            { name: 'Assisted pull-up or back extension machine', muscle: 'Back', sets: 3, reps: '8-10 reps' },
+            { name: 'Barbell or dumbbell bicep curl', muscle: 'Biceps', sets: 3, reps: '12-15 reps' },
+            { name: 'Hammer curl', muscle: 'Biceps', sets: 3, reps: '12-15 reps' }
         ]
     },
     wednesday: {
@@ -31,11 +31,11 @@ const WORKOUT_PLAN = {
         fullName: 'Wednesday',
         focus: 'Legs',
         exercises: [
-            { name: 'Leg press', sets: 3, reps: '12-15 reps' },
-            { name: 'Smith machine or bodyweight squat', sets: 3, reps: '10-12 reps' },
-            { name: 'Leg extension', sets: 3, reps: '12-15 reps' },
-            { name: 'Leg curl (hamstring)', sets: 3, reps: '12-15 reps' },
-            { name: 'Standing calf raise', sets: 3, reps: '15-20 reps' }
+            { name: 'Leg press', muscle: 'Quads & Glutes', sets: 3, reps: '12-15 reps' },
+            { name: 'Smith machine or bodyweight squat', muscle: 'Quads & Glutes', sets: 3, reps: '10-12 reps' },
+            { name: 'Leg extension', muscle: 'Quads & Glutes', sets: 3, reps: '12-15 reps' },
+            { name: 'Leg curl (hamstring)', muscle: 'Hamstrings', sets: 3, reps: '12-15 reps' },
+            { name: 'Standing calf raise', muscle: 'Calves', sets: 3, reps: '15-20 reps' }
         ]
     },
     thursday: {
@@ -44,11 +44,11 @@ const WORKOUT_PLAN = {
         fullName: 'Thursday',
         focus: 'Shoulders + Abs',
         exercises: [
-            { name: 'Machine or dumbbell shoulder press', sets: 3, reps: '10-12 reps' },
-            { name: 'Lateral raise', sets: 3, reps: '12-15 reps' },
-            { name: 'Front raise', sets: 3, reps: '12-15 reps' },
-            { name: 'Plank', sets: 3, reps: '30-45 sec' },
-            { name: 'Hanging knee raise or crunch machine', sets: 3, reps: '15 reps' }
+            { name: 'Machine or dumbbell shoulder press', muscle: 'Shoulders', sets: 3, reps: '10-12 reps' },
+            { name: 'Lateral raise', muscle: 'Shoulders', sets: 3, reps: '12-15 reps' },
+            { name: 'Front raise', muscle: 'Shoulders', sets: 3, reps: '12-15 reps' },
+            { name: 'Plank', muscle: 'Abs', sets: 3, reps: '30-45 sec' },
+            { name: 'Hanging knee raise or crunch machine', muscle: 'Abs', sets: 3, reps: '15 reps' }
         ]
     },
     friday: {
@@ -57,11 +57,11 @@ const WORKOUT_PLAN = {
         fullName: 'Friday',
         focus: 'Back + Biceps',
         exercises: [
-            { name: 'Seated row (wide grip)', sets: 3, reps: '10-12 reps' },
-            { name: 'Single-arm lat pulldown or row', sets: 3, reps: '10-12 reps' },
-            { name: 'Face pull', sets: 3, reps: '12-15 reps' },
-            { name: 'Concentration curl', sets: 3, reps: '12-15 reps' },
-            { name: 'Cable curl', sets: 3, reps: '12-15 reps' }
+            { name: 'Seated row (wide grip)', muscle: 'Back', sets: 3, reps: '10-12 reps' },
+            { name: 'Single-arm lat pulldown or row', muscle: 'Back', sets: 3, reps: '10-12 reps' },
+            { name: 'Face pull', muscle: 'Back', sets: 3, reps: '12-15 reps' },
+            { name: 'Concentration curl', muscle: 'Biceps', sets: 3, reps: '12-15 reps' },
+            { name: 'Cable curl', muscle: 'Biceps', sets: 3, reps: '12-15 reps' }
         ]
     },
     saturday: {
@@ -70,11 +70,11 @@ const WORKOUT_PLAN = {
         fullName: 'Saturday',
         focus: 'Legs + Abs',
         exercises: [
-            { name: 'Walking lunges', sets: 3, reps: '12 reps per leg' },
-            { name: 'Hip thrust or glute bridge machine', sets: 3, reps: '12-15 reps' },
-            { name: 'Leg extension', sets: 3, reps: '12-15 reps' },
-            { name: 'Seated calf raise', sets: 3, reps: '15-20 reps' },
-            { name: 'Cable woodchop or Russian twist', sets: 3, reps: '15 reps per side' }
+            { name: 'Walking lunges', muscle: 'Legs', sets: 3, reps: '12 reps per leg' },
+            { name: 'Hip thrust or glute bridge machine', muscle: 'Legs', sets: 3, reps: '12-15 reps' },
+            { name: 'Leg extension', muscle: 'Legs', sets: 3, reps: '12-15 reps' },
+            { name: 'Seated calf raise', muscle: 'Calves', sets: 3, reps: '15-20 reps' },
+            { name: 'Cable woodchop or Russian twist', muscle: 'Abs', sets: 3, reps: '15 reps per side' }
         ]
     },
     sunday: {
@@ -221,9 +221,18 @@ function renderDayView(dayId) {
     const progress = getProgress(dayId);
     let totalSets = 0;
     let completedSets = 0;
+    let currentMuscle = '';
 
     dayData.exercises.forEach((ex, exIndex) => {
         totalSets += ex.sets;
+        
+        if (ex.muscle && ex.muscle !== currentMuscle) {
+            const muscleHeader = document.createElement('h3');
+            muscleHeader.className = 'muscle-group-header';
+            muscleHeader.textContent = ex.muscle;
+            workoutContainer.appendChild(muscleHeader);
+            currentMuscle = ex.muscle;
+        }
         
         const card = document.createElement('div');
         card.className = 'exercise-card';
