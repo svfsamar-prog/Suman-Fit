@@ -383,10 +383,17 @@ const installBanner = document.getElementById('install-banner');
 const installBtn = document.getElementById('install-btn');
 
 window.addEventListener('beforeinstallprompt', (e) => {
+    // Safeguard: Never show the install banner if we are already running inside the installed app
+    if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+        return;
+    }
+    
     // Prevent the mini-infobar from appearing on mobile
     e.preventDefault();
     // Stash the event so it can be triggered later.
     deferredPrompt = e;
+    // Update UI notify the user they can install the PWA
+    installBanner.classList.remove('hidden');
 });
 
 installBtn.addEventListener('click', async () => {
