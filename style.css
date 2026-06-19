@@ -6,6 +6,7 @@
     --white: #FFFFFF;
     --text-color: #4A2D38;
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,12 +14,14 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     -webkit-tap-highlight-color: transparent;
 }
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.5;
     padding-bottom: 40px;
 }
+
 header {
     background-color: var(--white);
     padding: 24px 16px;
@@ -29,6 +32,7 @@ header {
     z-index: 10;
     box-shadow: 0 2px 8px rgba(255, 107, 157, 0.05);
 }
+
 header h1 {
     font-size: 24px;
     font-weight: 900;
@@ -41,12 +45,14 @@ header h1 {
     margin-bottom: 12px;
     text-transform: uppercase;
 }
+
 /* Weekly Dots */
 .weekly-tracker {
     display: flex;
     justify-content: center;
     gap: 8px;
 }
+
 .dot {
     width: 10px;
     height: 10px;
@@ -54,9 +60,11 @@ header h1 {
     background-color: var(--secondary-pink);
     transition: background-color 0.3s ease;
 }
+
 .dot.completed {
     background-color: var(--primary-pink);
 }
+
 /* Day Navigation */
 .day-nav {
     display: flex;
@@ -65,9 +73,11 @@ header h1 {
     gap: 12px;
     scrollbar-width: none;
 }
+
 .day-nav::-webkit-scrollbar {
     display: none;
 }
+
 .day-tab {
     background-color: var(--white);
     color: var(--text-color);
@@ -80,12 +90,14 @@ header h1 {
     white-space: nowrap;
     transition: all 0.2s ease;
 }
+
 .day-tab.active {
     background-color: var(--primary-pink);
     color: var(--white);
     border-color: var(--primary-pink);
     box-shadow: 0 2px 8px rgba(255, 107, 157, 0.25);
 }
+
 /* Progress Indicator */
 .progress-indicator {
     text-align: center;
@@ -94,6 +106,7 @@ header h1 {
     color: var(--accent-pink);
     margin: 8px 16px 16px;
 }
+
 /* Workout Container & Cards */
 .workout-container {
     padding: 0 16px;
@@ -101,6 +114,7 @@ header h1 {
     flex-direction: column;
     gap: 16px;
 }
+
 .exercise-card {
     background-color: var(--white);
     border-radius: 16px;
@@ -108,15 +122,18 @@ header h1 {
     box-shadow: 0 2px 8px rgba(255, 107, 157, 0.15);
     transition: transform 0.2s ease;
 }
+
 .exercise-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
 }
+
 .exercise-title-area {
     flex: 1;
 }
+
 .exercise-title {
     font-size: 16px;
     font-weight: 700;
@@ -125,6 +142,7 @@ header h1 {
     display: inline-block;
     transition: color 0.3s ease;
 }
+
 .exercise-title::after {
     content: '';
     position: absolute;
@@ -135,23 +153,28 @@ header h1 {
     background-color: var(--text-color);
     transition: width 0.4s ease-out;
 }
+
 .exercise-card.exercise-completed .exercise-title {
     color: var(--secondary-pink);
 }
+
 .exercise-card.exercise-completed .exercise-title::after {
     width: 100%;
     background-color: var(--secondary-pink);
 }
+
 .exercise-scheme {
     font-size: 13px;
     color: var(--accent-pink);
     font-weight: 500;
 }
+
 .exercise-actions {
     display: flex;
     align-items: center;
     gap: 12px;
 }
+
 .youtube-btn {
     background: none;
     border: none;
@@ -165,19 +188,23 @@ header h1 {
     background-color: var(--bg-color);
     transition: background-color 0.2s ease;
 }
+
 .youtube-btn svg {
     width: 20px;
     height: 20px;
     fill: currentColor;
 }
+
 .expand-icon {
     font-size: 12px;
     color: var(--secondary-pink);
     transition: transform 0.3s ease;
 }
+
 .exercise-card.expanded .expand-icon {
     transform: rotate(180deg);
 }
+
 /* Sets Area */
 .sets-container {
     margin-top: 16px;
@@ -187,19 +214,23 @@ header h1 {
     flex-direction: column;
     gap: 12px;
 }
+
 .exercise-card.expanded .sets-container {
     display: flex;
 }
+
 .set-row {
     display: flex;
     align-items: center;
     cursor: pointer;
 }
+
 .set-label {
     flex: 1;
     font-size: 15px;
     font-weight: 500;
 }
+
 .set-checkbox {
     width: 24px;
     height: 24px;
@@ -211,10 +242,12 @@ header h1 {
     transition: all 0.2s ease;
     background-color: var(--white);
 }
+
 .set-checkbox.checked {
     background-color: var(--primary-pink);
     border-color: var(--primary-pink);
 }
+
 .set-checkbox.checked::after {
     content: '';
     width: 6px;
@@ -224,6 +257,7 @@ header h1 {
     transform: rotate(45deg);
     margin-bottom: 2px;
 }
+
 /* Rest Day Message */
 .rest-day-message {
     text-align: center;
@@ -233,14 +267,17 @@ header h1 {
     box-shadow: 0 2px 8px rgba(255, 107, 157, 0.15);
     margin: 0 16px;
 }
+
 .rest-day-message h2 {
     color: var(--primary-pink);
     margin-bottom: 8px;
 }
+
 .rest-day-message p {
     color: var(--text-color);
     opacity: 0.8;
 }
+
 /* Celebration Overlay */
 .celebration-container {
     position: fixed;
@@ -254,9 +291,11 @@ header h1 {
     justify-content: center;
     z-index: 100;
 }
+
 .celebration-container.hidden {
     display: none;
 }
+
 .celebration-content {
     background-color: var(--white);
     padding: 30px;
@@ -265,31 +304,38 @@ header h1 {
     box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
     animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, fadeOut 0.5s ease 2s forwards;
 }
+
 .celebration-content h2 {
     color: var(--primary-pink);
     margin: 10px 0;
     font-size: 24px;
 }
+
 .celebration-content p {
     color: var(--text-color);
     font-weight: 500;
 }
+
 .star {
     font-size: 32px;
     animation: spin 2s linear infinite;
     display: inline-block;
 }
+
 @keyframes popIn {
     0% { transform: scale(0.5); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
 }
+
 @keyframes fadeOut {
     0% { opacity: 1; }
     100% { opacity: 0; }
 }
+
 @keyframes spin {
     100% { transform: rotate(360deg); }
 }
+
 /* Install Banner */
 .install-banner {
     position: fixed;
@@ -307,16 +353,19 @@ header h1 {
     z-index: 50;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
 }
+
 .install-banner.hidden {
     transform: translateY(150%);
     opacity: 0;
     pointer-events: none;
 }
+
 .install-text {
     font-size: 14px;
     font-weight: 700;
     color: var(--text-color);
 }
+
 .install-btn {
     background-color: var(--primary-pink);
     color: var(--white);

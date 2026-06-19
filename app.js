@@ -85,16 +85,20 @@ const WORKOUT_PLAN = {
         exercises: []
     }
 };
+
 const DAY_ORDER = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+
 // State
 let currentDayId = '';
 let todayId = '';
+
 // DOM Elements
 const dayNav = document.getElementById('day-nav');
 const workoutContainer = document.getElementById('workout-container');
 const progressIndicator = document.getElementById('progress-indicator');
 const weeklyTracker = document.getElementById('weekly-tracker');
 const celebrationContainer = document.getElementById('celebration-container');
+
 // Initialization
 function init() {
     checkWeeklyReset();
@@ -107,6 +111,7 @@ function init() {
     
     registerServiceWorker();
 }
+
 function checkWeeklyReset() {
     const lastResetStr = localStorage.getItem('lastResetDate');
     const now = new Date();
@@ -118,23 +123,28 @@ function checkWeeklyReset() {
     lastSunday.setDate(today.getDate() - dayOfWeek);
     
     const lastSundayTime = lastSunday.getTime();
+
     if (!lastResetStr || parseInt(lastResetStr, 10) < lastSundayTime) {
         DAY_ORDER.forEach(day => localStorage.removeItem(`progress_${day}`));
         localStorage.setItem('lastResetDate', lastSundayTime.toString());
     }
 }
+
 function determineToday() {
     const jsDay = new Date().getDay(); // 0 = Sunday, 1 = Monday
     const index = jsDay === 0 ? 6 : jsDay - 1;
     todayId = DAY_ORDER[index];
 }
+
 function getProgress(dayId) {
     const saved = localStorage.getItem(`progress_${dayId}`);
     return saved ? JSON.parse(saved) : {};
 }
+
 function saveProgress(dayId, progress) {
     localStorage.setItem(`progress_${dayId}`, JSON.stringify(progress));
 }
+
 function updateWeeklyDots() {
     weeklyTracker.innerHTML = '';
     DAY_ORDER.forEach(dayId => {
@@ -161,9 +171,11 @@ function updateWeeklyDots() {
         weeklyTracker.appendChild(dot);
     });
 }
+
 function renderWeeklyDots() {
     updateWeeklyDots();
 }
+
 function renderDayTabs() {
     dayNav.innerHTML = '';
     DAY_ORDER.forEach(dayId => {
@@ -190,6 +202,7 @@ function renderDayTabs() {
         }
     }, 0);
 }
+
 function renderDayView(dayId) {
     const dayData = WORKOUT_PLAN[dayId];
     workoutContainer.innerHTML = '';
@@ -204,9 +217,11 @@ function renderDayView(dayId) {
         `;
         return;
     }
+
     const progress = getProgress(dayId);
     let totalSets = 0;
     let completedSets = 0;
+
     dayData.exercises.forEach((ex, exIndex) => {
         totalSets += ex.sets;
         
@@ -330,17 +345,21 @@ function renderDayView(dayId) {
         card.appendChild(setsContainer);
         workoutContainer.appendChild(card);
     });
+
     updateProgressIndicator(completedSets, totalSets);
 }
+
 function updateProgressIndicator(completed, total) {
     progressIndicator.textContent = `${completed}/${total} sets done`;
 }
+
 function triggerCelebration() {
     celebrationContainer.classList.remove('hidden');
     setTimeout(() => {
         celebrationContainer.classList.add('hidden');
     }, 2500);
 }
+
 function registerServiceWorker() {
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
@@ -354,22 +373,27 @@ function registerServiceWorker() {
         });
     }
 }
+
 // Start app
 document.addEventListener('DOMContentLoaded', init);
+
 // PWA Install Prompt Logic
 let deferredPrompt;
 const installBanner = document.getElementById('install-banner');
 const installBtn = document.getElementById('install-btn');
+
 window.addEventListener('beforeinstallprompt', (e) => {
     // Prevent the mini-infobar from appearing on mobile
     e.preventDefault();
     // Stash the event so it can be triggered later.
     deferredPrompt = e;
-    // Update UI notify the user they can install the PWA
-    installBanner.classList.remove('hidden');
 });
+
 installBtn.addEventListener('click', async () => {
-    if (!deferredPrompt) return;
+    if (!deferredPrompt) {
+        alert("To install, please tap your browser's menu (3 dots) and select 'Add to Home screen' or 'Install app'.");
+        return;
+    }
     // Show the install prompt
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
@@ -380,6 +404,7 @@ installBtn.addEventListener('click', async () => {
     // Hide the banner
     installBanner.classList.add('hidden');
 });
+
 window.addEventListener('appinstalled', () => {
     // Hide the app-provided install promotion
     installBanner.classList.add('hidden');

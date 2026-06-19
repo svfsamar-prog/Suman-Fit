@@ -1,4 +1,4 @@
-const CACHE_NAME = 'suman-fit-tracker-v3';
+const CACHE_NAME = 'suman-fit-tracker-v4';
 const ASSETS = [
     './',
     './index.html',
@@ -8,6 +8,7 @@ const ASSETS = [
     './icons/icon-192.png',
     './icons/icon-512.png'
 ];
+
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME)
@@ -15,6 +16,7 @@ self.addEventListener('install', (event) => {
             .then(() => self.skipWaiting())
     );
 });
+
 self.addEventListener('activate', (event) => {
     event.waitUntil(
         caches.keys().then((cacheNames) => {
@@ -28,6 +30,7 @@ self.addEventListener('activate', (event) => {
         }).then(() => self.clients.claim())
     );
 });
+
 self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request)
